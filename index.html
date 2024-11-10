@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Website without Header on Mobile</title>
+    <title>Website with Custom Header and Adjusted Width on Mobile</title>
     <style>
         /* Reset default styling */
         * {
@@ -32,7 +32,7 @@
             z-index: 1;
         }
 
-        /* Ensure iframe covers entire container */
+        /* Adjust iframe for mobile devices */
         .background-layer iframe {
             width: 100%;
             height: 100%;
@@ -69,10 +69,13 @@
             object-fit: contain;
         }
 
-        /* Media query for mobile - Hide header on screens 768px or less */
+        /* Media query for mobile adjustments */
         @media (max-width: 768px) {
-            header {
-                display: none;
+            .background-layer iframe {
+                width: 94%; /* Reduce width to create space on left and right */
+                height: 100%;
+                margin-left: 3%; /* Center content by adding equal margins */
+                margin-right: 3%;
             }
         }
     </style>
@@ -84,7 +87,7 @@
         <iframe src="https://filmbyhim.wixsite.com/my-site-1"></iframe>
     </div>
 
-    <!-- Overlay Header (will be hidden on mobile) -->
+    <!-- Overlay Header -->
     <header>
         <!-- Left Button (Click to refresh main website content) -->
         <div class="button left-button" onclick="refreshContent();">
