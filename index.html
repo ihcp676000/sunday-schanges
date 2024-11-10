@@ -32,11 +32,13 @@
             z-index: 1;
         }
 
-        /* Ensure iframe covers entire container without leaving blank spaces */
+        /* Adjust iframe to reduce left and right margins */
         .background-layer iframe {
             width: 100%;
             height: 100%;
             border: none;
+            transform: scale(1.03); /* Scale up slightly to hide left and right margins */
+            transform-origin: 50% 0; /* Center scaling on the horizontal axis */
         }
 
         /* Style the overlay header */
