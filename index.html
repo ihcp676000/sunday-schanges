@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Website with Custom Header and Adjusted Width on Mobile</title>
+    <title>Website with Custom Header and Embedded Wix Site</title>
     <style>
         /* Reset default styling */
         * {
@@ -12,10 +12,10 @@
             box-sizing: border-box;
         }
 
-        /* Ensure the html and body take up the full viewport */
+        /* Full viewport for html and body */
         html, body {
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
             overflow: hidden;
         }
 
@@ -26,17 +26,20 @@
             left: 0;
             right: 0;
             bottom: 0;
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
             overflow: hidden;
             z-index: 1;
         }
 
         /* Adjust iframe for mobile devices */
         .background-layer iframe {
-            width: 100%;
-            height: 100%;
+            width: 100vw !important;
+            height: 100vh !important;
             border: none;
+            display: block;
+            margin: 0;
+            padding: 0;
         }
 
         /* Style the overlay header */
@@ -71,12 +74,7 @@
 
         /* Media query for mobile adjustments */
         @media (max-width: 768px) {
-            .background-layer iframe {
-                width: 94%; /* Reduce width to create space on left and right */
-                height: 100%;
-                margin-left: 3%; /* Center content by adding equal margins */
-                margin-right: 3%;
-            }
+            /* No extra changes here for mobile */
         }
     </style>
 </head>
@@ -84,7 +82,7 @@
 
     <!-- Background Layer: Main Website -->
     <div class="background-layer">
-        <iframe src="https://filmbyhim.wixsite.com/my-site-1"></iframe>
+        <iframe src="https://filmbyhim.wixsite.com/my-site-1" scrolling="no"></iframe>
     </div>
 
     <!-- Overlay Header -->
