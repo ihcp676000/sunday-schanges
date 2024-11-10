@@ -70,15 +70,12 @@
                 max-height: 4vh; /* Smaller image on mobile */
             }
 
-            /* Reduce padding for the iframe content (below header) */
-            .background-layer {
-                padding-left: -90%;  /* Reduce left padding by 10% of full width */
-                padding-right: -90%; /* Reduce right padding by 10% of full width */
-            }
-
+            /* Expand iframe content by 30% using transform scaling */
             .background-layer iframe {
                 width: 100%;
                 height: calc(100% - 8.2vh); /* Account for the header height */
+                transform: scale(1.3); /* Scale content to 130% */
+                transform-origin: top left; /* Keep scaling anchored to the top left */
             }
         }
 
@@ -87,6 +84,7 @@
             .background-layer iframe {
                 width: 100%;
                 height: 100%; /* Full height for larger screens */
+                transform: none; /* Remove scaling on larger screens */
             }
         }
 
